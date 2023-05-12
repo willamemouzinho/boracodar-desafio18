@@ -1,7 +1,3 @@
-/*=== Importacion ===*/
-
-/*=== /Importacion ===*/
-
 /*=== Variables ===*/
 :root {
     --header-height: 3.5rem;
@@ -20,34 +16,6 @@
     /* typography */
     --font-family: 'Source Sans Pro', sans-serif;
 
-    --big-font-size: 2rem;
-    --title-font-size: 1.5rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --body-font-size: 1rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-
-    --font-light: 300;
-    --font-normal: 400;
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semi-bold: 600;
-    --font-bold: 700;
-
-    /* spacing */
-    --sp-0-25: 0.25rem;
-    --sp-0-5: 0.5rem;
-    --sp-0-75: 0.75rem;
-    --sp-1: 1rem;
-    --sp-1-25: 1.25rem;
-    --sp-1-5: 1.5rem;
-    --sp-2: 2rem;
-    --sp-2-5: 2.5rem;
-    --sp-4: 4rem;
-
     /* z index */
     --z--1: -1;
     --z-0: 0;
@@ -57,14 +25,6 @@
 
     --text-shadow-light: 0px 0px 8px rgba(255, 255, 255, 0.4);
 }
-
-/*
-background: linear-gradient(90.24deg, rgba(14, 23, 101, 0.45) 0%, rgba(53, 14, 88, 0.45) 98.1%), #121214; 
-
-background: linear-gradient(90.24deg, rgba(14, 23, 101, 0.85) 0%, rgba(53, 14, 88, 0.85) 98.1%);
-
-background: linear-gradient(180.28deg, rgba(5, 8, 36, 0.88) 0.25%, rgba(255, 255, 255, 0.88) 0.26%, rgba(255, 255, 255, 0) 99.75%);
-*/
 *,
 ::after,
 ::before {
@@ -73,19 +33,55 @@ background: linear-gradient(180.28deg, rgba(5, 8, 36, 0.88) 0.25%, rgba(255, 255
     padding: 0;
     font-family: var(--font-family);
 }
-
 #app {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: var(--color-purple-800); */
     background: linear-gradient(102.32deg, #030422 -2.74%, #090114 101.6%);
-    /* z-index: -1000; */
 }
-
-
-
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.cards-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* align-self: center; */
+    /* justify-self: center; */
+    width: 348px;
+    height: 486px;
+    border-radius: 16px;
+    z-index: -2;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-purple-400);
+    /* largura e cor da borda para WebKit */
+    text-stroke: 2px var(--color-purple-400);
+    /* largura e cor da borda para outros navegadores */
+    opacity: 0.9;
+    box-shadow: 0px 113px 45px rgba(0, 0, 0, 0.02), 0px 64px 38px rgba(0, 0, 0, 0.08), 0px 28px 28px rgba(0, 0, 0, 0.13), 0px 7px 16px rgba(0, 0, 0, 0.15), 0px 0px 0px rgba(0, 0, 0, 0.15);
+}
+.card_left {
+    /* transform: scale(0.8) translateX(-75%); */
+    background: url('imgs/bg-card-left.svg');
+    background-size: cover;
+    filter: drop-shadow(#f7f7f7);
+    background-position: center left;
+    background-origin: content-box;
+}
+.card_right {
+    /* transform: scale(0.8) translateX(75%); */
+    background: url('imgs/bg-card-right.svg');
+    filter: drop-shadow(#f7f7f7);
+    background-position: center left;
+    background-origin: content-box;
+    background-size: cover;
+}
 .character_card {
     z-index: 4;
     position: relative;
@@ -101,99 +97,12 @@ background: linear-gradient(180.28deg, rgba(5, 8, 36, 0.88) 0.25%, rgba(255, 255
     box-shadow: 0px 294px 118px rgba(0, 0, 0, 0.03), 0px 165px 99px rgba(0, 0, 0, 0.1), 0px 73px 73px rgba(0, 0, 0, 0.17), 0px 18px 40px rgba(0, 0, 0, 0.2), 0px 0px 0px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     background-color: red;
-    /* background-image: url('imgs/Character.png'); */
+    background-image: url('imgs/bg-card-front.svg');
 }
-
-.character_card::before {
-    content: "FINN";
-    transform: scale(0.8) translateX(-75%);
-    border-radius: 16px;
-    z-index: -2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.character_img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: ; */
-    background: url('imgs/Image-1.png');
-    background-size: cover;
-    filter: drop-shadow(#f7f7f7);
-    background-position: center left;
-    background-origin: content-box;
-    color: transparent;
-    -webkit-text-stroke: 2px var(--color-purple-400);
-    /* largura e cor da borda para WebKit */
-    text-stroke: 2px var(--color-purple-400);
-    /* largura e cor da borda para outros navegadores */
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.9;
-    /* background: linear-gradient(0deg, rgba(0, 1, 14, 0.5), rgba(0, 1, 14, 0.5)), linear-gradient(205.4deg, rgba(14, 23, 101, 0.85) 7.26%, rgba(42, 17, 92, 0.85) 100%); */
+    z-index: -10;
 }
-.character_card::before::after {
-    /* z-index: 0; */
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fefbff;
-}
-.character_card::after {
-    content: "FINN";
-    transform: scale(0.8) translateX(75%);
-    border-radius: 16px;
-    z-index: -2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: ; */
-    background: url('imgs/Image.png');
-    filter: drop-shadow(#f7f7f7);
-    background-position: center left;
-    background-origin: content-box;
-    background-size: cover;
-    color: transparent;
-    -webkit-text-stroke: 2px var(--color-purple-400);
-    /* largura e cor da borda para WebKit */
-    text-stroke: 2px var(--color-purple-400);
-    /* largura e cor da borda para outros navegadores */
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.9;
-    /* background: linear-gradient(0deg, rgba(0, 1, 14, 0.5), rgba(0, 1, 14, 0.5)), linear-gradient(205.4deg, rgba(14, 23, 101, 0.85) 7.26%, rgba(42, 17, 92, 0.85) 100%); */
-    /*content: "";
-    position: absolute;
-    width: 427px;
-    height: 558px;
-    background-image: url('imgs/Character.png');
-    clip-path: stroke-box;
-    bottom: 0;
-    left: 112px;
-    z-index: -1;
-    background-size: contain;
-    */
-    /* background-position: center; */
-    /* padding: 20px; */
-    /* border: 1px solid #ccc; */
-}
-
 .character_started {
     width: 263px;
     margin-bottom: 60px;
